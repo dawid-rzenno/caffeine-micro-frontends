@@ -35,6 +35,103 @@
           }
         }
       }
+    },
+    "caffeine-ui-showcase": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/caffeine-ui-showcase",
+      "sourceRoot": "projects/caffeine-ui-showcase/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/caffeine-ui-showcase",
+            "index": "projects/caffeine-ui-showcase/src/index.html",
+            "main": "projects/caffeine-ui-showcase/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/caffeine-ui-showcase/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/caffeine-ui-showcase/src/favicon.ico",
+              "projects/caffeine-ui-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/caffeine-ui-showcase/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "caffeine-ui-showcase:build:production"
+            },
+            "development": {
+              "browserTarget": "caffeine-ui-showcase:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "caffeine-ui-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/caffeine-ui-showcase/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/caffeine-ui-showcase/src/favicon.ico",
+              "projects/caffeine-ui-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/caffeine-ui-showcase/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {
