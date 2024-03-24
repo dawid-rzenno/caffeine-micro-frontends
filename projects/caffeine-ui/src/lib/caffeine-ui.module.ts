@@ -5,12 +5,12 @@ import { CaffeineUiComponent } from './caffeine-ui.component';
 
 @NgModule({
   declarations: [
-    CaffeineUiComponent
+    CaffeineUiComponent,
   ],
   imports: [
   ],
   exports: [
-    CaffeineUiComponent
+    CaffeineUiComponent,
   ]
 })
 export class CaffeineUiModule { }
