@@ -98,10 +98,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "caffeine-ui-showcase:build:production"
+              "buildTarget": "caffeine-ui-showcase:build:production"
             },
             "development": {
-              "browserTarget": "caffeine-ui-showcase:build:development"
+              "buildTarget": "caffeine-ui-showcase:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,7 +109,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "caffeine-ui-showcase:build"
+            "buildTarget": "caffeine-ui-showcase:build"
           }
         },
         "test": {
