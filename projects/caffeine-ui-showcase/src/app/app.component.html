@@ -1,3 +1,20 @@
 <h1>Caffeine UI Showcase</h1>
 
-<lib-button></lib-button>
+<h3>Buttons</h3>
+<p>"basic" | "primary" | "accent" | "warn"</p>
+<button
+  style="margin-right: 0.5rem;"
+  *ngFor="let button of buttons"
+  caffeine-ui-button
+  [color]="button.color"
+  [disabled]="button.disabled"
+>{{button.label}}</button>
+
+<h3>Inputs</h3>
+Validation status: {{formGroup.statusChanges | async}}
+<form [formGroup]="formGroup">
+  <p><input formControlName="validExample" caffeine-ui-input></p>
+  <p><input formControlName="invalidExample" caffeine-ui-input></p>
+
+
+</form>

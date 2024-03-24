@@ -1,0 +1,40 @@
+::ng-deep {
+  .caffeine {
+    &__ui-input {
+      padding: 0.5rem 0.75rem;
+      border: white solid 1px;
+      border-radius: 0.25rem;
+      box-shadow: none;
+      background: whitesmoke;
+
+      &--PENDING, &--VALID {
+        border: 1px solid gray;
+      }
+
+      &--INVALID {
+        border-color: #f44336;
+        background: #f6e7e6;
+        color: #f44336;
+
+      }
+
+      &--DISABLED {
+        background: #e8e8e8;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:not(:disabled) {
+        &:hover {
+          filter: brightness(1.04);
+        }
+
+        &:focus {
+          filter: brightness(1.04);
+        }
+      }
+    }
+  }
+}

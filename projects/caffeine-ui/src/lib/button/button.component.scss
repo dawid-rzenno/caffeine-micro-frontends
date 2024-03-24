@@ -1,3 +1,49 @@
-.caffeine-button {
+::ng-deep .caffeine {
+  &__ui-button {
+    padding: 0.5rem 0.75rem;
+    border: white solid 1px;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    font-weight: bolder;
 
+    &--basic {
+      background: #e5e5e5;
+      border-color: #b9b9b9;
+    }
+
+    &--primary {
+      background: #0064FF;
+      border-color: #004fd0;
+      color: white;
+    }
+
+    &--accent {
+      background: #ff9900;
+      border-color: #d58100;
+    }
+
+    &--warn {
+      background: #f44336;
+      border-color: #ce392e;
+    }
+
+    &:disabled {
+      background: lightgray;
+      border-color: #b9b9b9;
+      color: gray;
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.04);
+      }
+
+      &:active:not(:disabled) {
+        filter: brightness(0.96);
+      }
+    }
+  }
 }
+

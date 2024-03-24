@@ -5,9 +5,14 @@
   "projects": {
     "caffeine-ui": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/caffeine-ui",
       "sourceRoot": "projects/caffeine-ui/src",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

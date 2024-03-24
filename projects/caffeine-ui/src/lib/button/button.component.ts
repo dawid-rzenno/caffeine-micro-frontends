@@ -1,20 +1,25 @@
 import { Component, Input } from '@angular/core';
-
-export enum ButtonColor {
-  Basic,
-  Primary,
-  Accent,
-  Warn,
-  Disabled,
-  Link
-}
+import { ButtonColors } from "./button-colors.type";
 
 @Component({
-  selector: 'lib-button',
-  templateUrl: './button.component.html',
+  selector: 'button[caffeine-ui-button]',
   standalone: true,
-  styleUrls: ['./button.component.scss']
+  imports: [],
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
+  host: {
+    '[class]': 'colorClassName'
+  }
 })
 export class ButtonComponent {
-  @Input() color: ButtonColor = ButtonColor.Basic;
+  protected readonly baseClassName: string = 'caffeine__ui-button';
+  protected colorClassName: string = this.createColorClassName();
+
+  @Input() set color(color: ButtonColors) {
+    this.colorClassName = this.createColorClassName(color)
+  };
+
+  protected createColorClassName(buttonColor: ButtonColors = 'basic'): string {
+    return `${this.baseClassName} ${this.baseClassName}--${buttonColor}`
+  }
 }

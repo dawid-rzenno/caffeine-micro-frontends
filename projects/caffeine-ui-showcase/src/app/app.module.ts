@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from "../../../caffeine-ui/src/lib/button/button.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { ButtonComponent, InputComponent } from "caffeine-ui";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { ButtonComponent } from "../../../caffeine-ui/src/lib/button/button.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonComponent
+    ButtonComponent,
+    InputComponent,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
