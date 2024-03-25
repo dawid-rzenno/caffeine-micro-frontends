@@ -1,4 +1,10 @@
-# CaffeineIntranet
+# Caffeine Intranet
+
+It's a multi project Angular repository: UI library and its showcase app. In the future there will be 
+- a todo app that uses said library
+- a login and registration app 
+
+They will be orchestrated in a micro-frontend architecture.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
